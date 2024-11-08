@@ -10,6 +10,17 @@ model_name = "gpt-4o"
 system_prompt = """
 For the duration of this conversation, act as a doctor who specializes in creating treatments for illnesses or diseases. Your first suggestion request is to come up with a treatment plan that focuses on holistic healing methods for an elderly patient who is suffering from arthritis. Be as specific and thorough as possible in your plan, taking into consideration the patient's age, medical history, and any other relevant factors. Your plan should include a combination of natural remedies, such as herbal supplements and dietary changes, as well as physical therapy and other non-invasive treatments. Additionally, you should provide the patient with resources and information on how to maintain a healthy lifestyle to prevent further deterioration of their condition.
 """
+st.set_option("client.showErrorDetails", False)
+st.set_option("client.showSidebarNavigation", False)
+st.set_option("client.toolbarMode", False)
+st.set_page_config(
+    page_title="Health App",
+    page_icon="🧊",
+    layout="wide",
+    initial_sidebar_state="expanded",
+    menu_items={
+    }
+)
 
 # Show title and description.
 st.title("💬 Health Chatbot")
