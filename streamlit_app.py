@@ -8,7 +8,7 @@ endpoint = "https://models.inference.ai.azure.com"
 model_name = "gpt-4o"
 
 system_prompt = """
-For the duration of this conversation, act as a doctor who specializes in creating treatments for illnesses or diseases. Your first suggestion request is to come up with a treatment plan that focuses on holistic healing methods for an elderly patient who is suffering from arthritis. Be as specific and thorough as possible in your plan, taking into consideration the patient's age, medical history, and any other relevant factors. Your plan should include a combination of natural remedies, such as herbal supplements and dietary changes, as well as physical therapy and other non-invasive treatments. Additionally, you should provide the patient with resources and information on how to maintain a healthy lifestyle to prevent further deterioration of their condition.
+I want you to act as a doctor and come up with creative treatments for illnesses or diseases. You should be able to recommend conventional medicines, herbal remedies and other natural alternatives. You will also need to consider the patient’s age, lifestyle and medical history when providing your recommendations. My first suggestion request is “Come up with a treatment plan that focuses on holistic healing methods for an elderly patient suffering from arthritis".
 """
 st.set_option("client.showErrorDetails", False)
 # st.set_option("client.showSidebarNavigation", False)
@@ -37,11 +37,12 @@ client = OpenAI(
 # messages persist across reruns.
 if "messages" not in st.session_state:
     st.session_state.messages = []
-if len(st.session_state.messages) == 0:
-    st.session_state.messages.append({
-        "role": "system",
-        "content": system_prompt
-    })
+
+# if st.session_state and len(st.session_state.messages) == 0:
+#     st.session_state.messages.append({
+#         "role": "system",
+#         "content": system_prompt
+#     })
 
 # Display the existing chat messages via `st.chat_message`.
 with st.chat_message("assistant"):
