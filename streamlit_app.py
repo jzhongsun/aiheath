@@ -12,7 +12,6 @@ For the duration of this conversation, act as a doctor who specializes in creati
 """
 st.set_option("client.showErrorDetails", False)
 st.set_option("client.showSidebarNavigation", False)
-st.set_option("client.toolbarMode", False)
 st.set_page_config(
     page_title="Health App",
     page_icon="🧊",
@@ -45,6 +44,7 @@ if len(st.session_state.messages) == 0:
     })
 
 # Display the existing chat messages via `st.chat_message`.
+st.markdown("Hello, how are you today?")
 for message in st.session_state.messages:
     if message["role"] == "system":
         continue
