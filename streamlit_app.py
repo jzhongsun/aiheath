@@ -44,7 +44,9 @@ if len(st.session_state.messages) == 0:
     })
 
 # Display the existing chat messages via `st.chat_message`.
-st.markdown("Hello, how are you today?")
+with st.chat_message("assistant"):
+    st.markdown("Hello, how are you today?")
+
 for message in st.session_state.messages:
     if message["role"] == "system":
         continue
