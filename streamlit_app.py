@@ -35,6 +35,8 @@ if len(st.session_state.messages) == 0:
 
 # Display the existing chat messages via `st.chat_message`.
 for message in st.session_state.messages:
+    if message["role"] == "system":
+        continue
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
